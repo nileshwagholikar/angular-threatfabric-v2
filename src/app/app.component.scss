@@ -1,0 +1,50 @@
+$navigation-width: 80px;
+$content-padding-left: $navigation-width;
+
+app-navigation {
+    width: $navigation-width;
+    height: 100vh;
+    background-color: #233C45;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: all 0.2s;
+    z-index: 9999;
+}
+
+.t-root-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    app-header {
+        background-color: #B6BEC1;
+        -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.85);
+        -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.85);
+        box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.85);
+        padding-left: $content-padding-left;
+        transition: all 0.2s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9998;
+    }
+
+    .t-page-content {
+        max-height: calc(100vh - 50px);
+        overflow-y: auto;
+        padding-left: $content-padding-left;
+        transition: all 0.2s;
+
+        .t-content {
+            padding: 40px;
+        }
+    }
+
+    app-footer {
+        height: 40px;
+        border-top: 1px solid #000;
+        padding-left: $content-padding-left;
+    }
+}
