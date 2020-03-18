@@ -1,1 +1,60 @@
-<h1>Details</h1>
+<div *ngFor="let device of device$ | async">
+  <h1>Details of {{device.deviceID}}</h1>
+  <div class="d-flex justify-content-center">
+    <div class="card box-shadow">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12 col-md-6 app-details">
+            Device ID
+          </div>
+          <div class="col-12 col-md-6">
+            {{device.deviceID}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 app-details">
+            Device Type
+          </div>
+          <div class="col-12 col-md-6">
+            {{device.type}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 app-details">
+            Device Model
+          </div>
+          <div class="col-12 col-md-6">
+            {{device.model}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 app-details">
+            Device OS Version
+          </div>
+          <div class="col-12 col-md-6">
+            {{device.osVersion}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 app-details">
+            Device Risk
+          </div>
+          <div class="col-12 col-md-6">
+            {{device.risk}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 app-details">
+            Device Lastseen
+          </div>
+          <div class="col-12 col-md-6">
+            {{device.lastSeen}}
+          </div>
+        </div>
+        <div class="mt-4">
+          <button class="btn btn-block btn-primary" (click)="backToList()">Back to List</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,83 +1,82 @@
 <h1>Settings</h1>
+<form>
+<div class="search row justify-content-md-center">
+    <div class="col-md-6">
+        <div class="input-group mb-3 float-label">
+            <input type="text" id="searchText" class="form-control" placeholder="Search Settings" aria-label="Search Settings" aria-describedby="basic-addon2">
+            <label for="searchText">Search Settings</label>
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">Search</span>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<hr />
+<div class="container">
 <div class="d-flex justify-content-between flex-wrap">
-    <div class="card">
-        <div class="card-body box-shadow rounded">
-            <div class="text-center">
-                <fa-icon [icon]="faDesktop" class="card-img-class"></fa-icon>
-            </div>
-            <h5 class="card-title text-center">Themes</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary btn-block">Change settings</a>
+    <div class="setting rounded">
+        <div class="setting-icon">
+            <fa-icon [icon]="faCogs"></fa-icon>
         </div>
+        <h5 class="setting-title">System</h5>
+        <p class="setting-text">Display, Color, Font</p>
     </div>
-    <div class="card">
-        <div class="card-body box-shadow rounded">
-            <div class="text-center">
-                <fa-icon [icon]="faDesktop" class="card-img-class"></fa-icon>
-            </div>
-            <h5 class="card-title text-center">Themes</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary btn-block">Change settings</a>
+    <div class="setting rounded">
+        <div class="setting-icon">
+            <fa-icon [icon]="faMobile"></fa-icon>
         </div>
+        <h5 class="setting-title">Devices</h5>
+        <p class="setting-text">Devices, Access, Blocking</p>
     </div>
-    <div class="card">
-        <div class="card-body box-shadow rounded">
-            <div class="text-center">
-                <fa-icon [icon]="faDesktop" class="card-img-class"></fa-icon>
-            </div>
-            <h5 class="card-title text-center">Themes</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary btn-block">Change settings</a>
+    <div class="setting rounded">
+        <div class="setting-icon">
+            <fa-icon [icon]="faUsers"></fa-icon>
         </div>
+        <h5 class="setting-title">Users</h5>
+        <p class="setting-text">Add, Remove, Delete, Hide, Block</p>
     </div>
-    <div class="card">
-        <div class="card-body box-shadow rounded">
-            <div class="text-center">
-                <fa-icon [icon]="faDesktop" class="card-img-class"></fa-icon>
-            </div>
-            <h5 class="card-title text-center">Themes</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary btn-block">Change settings</a>
+    <div class="setting rounded">
+        <div class="setting-icon">
+            <fa-icon [icon]="faBell"></fa-icon>
         </div>
+        <h5 class="setting-title">Notifications</h5>
+        <p class="setting-text">Mail, SMS</p>
     </div>
-    <div class="card">
-        <div class="card-body box-shadow rounded">
-            <div class="text-center">
-                <fa-icon [icon]="faDesktop" class="card-img-class"></fa-icon>
-            </div>
-            <h5 class="card-title text-center">Themes</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary btn-block">Change settings</a>
+    <div class="setting rounded">
+        <div class="setting-icon">
+            <fa-icon [icon]="faCog"></fa-icon>
         </div>
+        <h5 class="setting-title">APIs</h5>
+        <p class="setting-text">Add, Remove, Configure</p>
     </div>
-    <div class="card">
-        <div class="card-body box-shadow rounded">
-            <div class="text-center">
-                <fa-icon [icon]="faDesktop" class="card-img-class"></fa-icon>
-            </div>
-            <h5 class="card-title text-center">Themes</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary btn-block">Change settings</a>
+    <div class="setting rounded">
+        <div class="setting-icon">
+            <fa-icon [icon]="faChartBar"></fa-icon>
         </div>
+        <h5 class="setting-title">Chart</h5>
+        <p class="setting-text">Types, Colors, Charting API</p>
     </div>
-    <div class="card">
-        <div class="card-body box-shadow rounded">
-            <div class="text-center">
-                <fa-icon [icon]="faDesktop" class="card-img-class"></fa-icon>
-            </div>
-            <h5 class="card-title text-center">Themes</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary btn-block">Change settings</a>
+    <div class="setting rounded">
+        <div class="setting-icon">
+            <fa-icon [icon]="faDesktop"></fa-icon>
         </div>
+        <h5 class="setting-title">Dashboard</h5>
+        <p class="setting-text">Configuration, Girds</p>
     </div>
-    <div class="card">
-        <div class="card-body box-shadow rounded">
-            <div class="text-center">
-                <fa-icon [icon]="faDesktop" class="card-img-class"></fa-icon>
-            </div>
-            <h5 class="card-title text-center">Themes</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary btn-block">Change settings</a>
+    <div class="setting rounded">
+        <div class="setting-icon">
+            <fa-icon [icon]="faStickyNote"></fa-icon>
         </div>
+        <h5 class="setting-title">Reports</h5>
+        <p class="setting-text">Export formats, Type of Reports</p>
     </div>
+    <div class="setting rounded">
+        <div class="setting-icon">
+            <fa-icon [icon]="faDatabase"></fa-icon>
+        </div>
+        <h5 class="setting-title">Database</h5>
+        <p class="setting-text">Databases, Connection</p>
+    </div>
+</div>
 </div>

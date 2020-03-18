@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app-details.component.scss']
 })
 export class AppDetailsComponent implements OnInit {
-
+  date;
   constructor() { }
 
   ngOnInit() {
+    const currentDate = new Date();
+    this.date = currentDate.toLocaleString();
   }
 
 }

@@ -76,7 +76,7 @@ export class DashboardComponent implements OnInit {
       type: 'column'
     },
     title: {
-        text: 'Infected Devices'
+        text: 'Rooted Devices'
     },
     subtitle: {
         text: 'Source: DotCom.com'
@@ -96,7 +96,7 @@ export class DashboardComponent implements OnInit {
     yAxis: {
         min: 0,
         title: {
-            text: 'Infected'
+            text: 'Rooted'
         }
     },
     tooltip: {

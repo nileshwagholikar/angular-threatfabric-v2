@@ -9,6 +9,7 @@ import { SortDirection } from './../app-directives/sortable.directive';
 
 
 interface SearchResult {
+  device: Device[];
   devices: Device[];
   total: number;
 }
@@ -45,6 +46,10 @@ function matches(device: Device, term: string, pipe: PipeTransform) {
     || device.lastSeen.toLowerCase().includes(term.toLowerCase())
 }
 
+function find(device: Device, term: string, pipe: PipeTransform) {
+  return pipe.transform(device.id).includes(term)
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -54,6 +59,7 @@ export class DataService {
   private _loading$ = new BehaviorSubject<boolean>(true);
   private _search$ = new Subject<void>();
   private _devices$ = new BehaviorSubject<Device[]>([]);
+  private _device$ = new BehaviorSubject<Device[]>([]);
   private _total$ = new BehaviorSubject<number>(0);
 
   private _state: State = {
@@ -72,6 +78,7 @@ export class DataService {
       delay(200),
       tap(() => this._loading$.next(false))
     ).subscribe(result => {
+      this._device$.next(result.device);
       this._devices$.next(result.devices);
       this._total$.next(result.total);
     });
@@ -80,6 +87,7 @@ export class DataService {
   }
 
   get devices$() { return this._devices$.asObservable(); }
+  get device$() { return this._device$.asObservable(); }
   get total$() { return this._total$.asObservable(); }
   get loading$() { return this._loading$.asObservable(); }
   get page() { return this._state.page; }
@@ -109,7 +117,10 @@ export class DataService {
 
     // 3. paginate
     devices = devices.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
-    return of({devices, total});
+
+    // exact Device
+    let device = devices.filter(device => find(device, searchTerm, this.pipe));
+    return of({device, devices, total});
   }
 
   public getChartJSON(): Observable<any> {

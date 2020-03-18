@@ -11,8 +11,8 @@ import { AppPageNotFoundComponent } from './app-page-not-found/app-page-not-foun
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'details', redirectTo: '/devices', pathMatch: 'full' },
-  { path: 'details/:id', component: DetailsComponent},
+  { path: 'details', redirectTo: '/devices' },
+  { path: 'devices/details/:id', component: DetailsComponent},
   { path: 'devices', component: DevicesComponent},
   { path: 'settings', component: SettingsComponent},
   { path: 'app-details', component: AppDetailsComponent},

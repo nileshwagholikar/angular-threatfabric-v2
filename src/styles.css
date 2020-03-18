@@ -32,3 +32,44 @@ h1 {
   display: flex;
   justify-content: center;
 }
+label {
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  width: 100%;
+  left: 13px;
+  color: #999;
+  transition: all 0.2s;
+  display: inline-block !important;
+  text-align: left;
+}
+.float-label {
+  position: relative;
+}
+.float-label input,
+.float-label textarea {
+  height: 45px !important;
+  padding-top: 20px !important;
+}
+.float-label input::placeholder,
+.float-label textarea::placeholder {
+  color: transparent !important;
+}
+.float-label input:focus ~ label,
+.float-label textarea:focus ~ label {
+  top: 4px;
+  font-size: 12px;
+  left: 14px;
+}
+.float-label input:not(:placeholder-shown) ~ label,
+.float-label textarea:not(:placeholder-shown) ~ label {
+  top: 4px;
+  font-size: 12px;
+  left: 14px;
+}
+.float-label input:not(:-ms-input-placeholder) ~ label,
+.float-label textarea:not(:-ms-input-placeholder) ~ label {
+  top: 4px;
+  font-size: 12px;
+  left: 14px;
+}
