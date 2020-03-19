@@ -19,8 +19,8 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id'];
-      const device = this.service.devices.filter((device) => device.id === this.id);
-      this.device = device[0];
+      const selectedDevice = this.service.devices.filter((device) => device.id === this.id);
+      this.device = selectedDevice[0];
     });
   }
 

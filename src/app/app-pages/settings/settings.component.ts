@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faHome, faDesktop, faUsersCog, faCogs, faCog, faMobileAlt, faChartBar, faDatabase } from '@fortawesome/free-solid-svg-icons';
-import { faBell, faStickyNote } from "@fortawesome/free-regular-svg-icons";
+import { faBell, faStickyNote } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-settings',
@@ -10,7 +10,7 @@ import { faBell, faStickyNote } from "@fortawesome/free-regular-svg-icons";
 export class SettingsComponent {
   faDesktop = faDesktop;
   faHome = faHome;
-  faUsers = faUsersCog; 
+  faUsers = faUsersCog;
   faBell = faBell;
   faMobile = faMobileAlt;
   faChartBar = faChartBar;
@@ -18,7 +18,7 @@ export class SettingsComponent {
   faStickyNote = faStickyNote;
   faCogs = faCogs;
   faCog = faCog;
-  
+
   constructor() { }
 
 }

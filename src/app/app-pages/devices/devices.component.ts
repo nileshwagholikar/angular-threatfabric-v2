@@ -23,7 +23,7 @@ export class DevicesComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // $("#example").DataTables();
-    if(this.service.devices.length) {
+    if (this.service.devices.length) {
       this.devices = this.service.devices;
     } else {
     this.deviceService = this.service.getDevices()
@@ -36,7 +36,7 @@ export class DevicesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if(this.deviceService) {
+    if (this.deviceService) {
       this.deviceService.unsubscribe();
     }
   }

@@ -13,11 +13,11 @@ export class HeaderComponent {
 
   /*--- Toggle Left Navigation ---*/
   toggleMenu() {
-    const appNav = document.querySelector('.t-navigation') as HTMLDivElement,
-          appHeader = document.querySelector('.t-header') as HTMLDivElement,
-          appContent = document.querySelector('.t-page-content') as HTMLDivElement;
+    const appNav = document.querySelector('.t-navigation') as HTMLDivElement;
+    const appHeader = document.querySelector('.t-header') as HTMLDivElement;
+    const appContent = document.querySelector('.t-page-content') as HTMLDivElement;
 
-    if(this.openMenu) {
+    if (this.openMenu) {
       this.openMenu = false;
       appNav.style.marginLeft = '-80px';
       appHeader.style.paddingLeft = '0px';

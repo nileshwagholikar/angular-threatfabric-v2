@@ -15,7 +15,7 @@ export class DataService {
   private _infectedURL = 'assets/infected.json';
   public devices = [];
   private _device;
-    
+
   constructor(private http: HttpClient) { }
 
   public getDevices() {
@@ -29,7 +29,7 @@ export class DataService {
   public getInfectedChartJSON() {
     return this.http.get(this._infectedURL);
   }
-  
+
   public getRootedChartJSON() {
     return this.http.get(this._rootedURL);
   }

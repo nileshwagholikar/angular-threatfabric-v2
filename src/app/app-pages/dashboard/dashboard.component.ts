@@ -13,19 +13,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
     dataInfectedChart;
     infectedChart: Chart;
     infectedChartService;
-  
     dataRootedChart;
     rootedChart: Chart;
     rootedChartService;
-  
     dataDailyInfectedChart;
     dailyInfectedChart: Chart;
     dailyInfectedChartService;
 
-    constructor(private dataService: DataService) {
-        
-    }
-    
+    constructor(private dataService: DataService) {}
 
     ngOnInit() {
         // Daily Infected Devices
@@ -80,7 +75,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
                         threshold: null
                     }
                 },
-        
                 series: [{
                     name: 'Infected Devices',
                     data: this.dataDailyInfectedChart,
@@ -135,7 +129,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
                     }
                 },
                 series: this.dataRootedChart.series
-            })
+            });
         });
 
         // Infected Devices
@@ -184,7 +178,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
                       }
                   },
                   series: this.dataInfectedChart.series
-            })
+            });
         });
     }
 
