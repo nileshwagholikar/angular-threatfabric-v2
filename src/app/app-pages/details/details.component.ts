@@ -1,11 +1,8 @@
 import { Router, ActivatedRoute } from '@angular/router';
-import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {Observable} from 'rxjs';
-
-import { Device } from './../../app-interfaces/device';
 import { DataService } from './../../app-service/data.service';
-
+import { Device } from 'src/app/app-interfaces/device';
 
 @Component({
   selector: 'app-details',
@@ -13,28 +10,21 @@ import { DataService } from './../../app-service/data.service';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  id: string;
+  id: number;
   private sub: any;
-  device$: Observable<Device[]>;
+  device;
 
-  constructor(private router: Router, public service: DataService, private route: ActivatedRoute) {
-    
-  }
+  constructor(private router: Router, public service: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.id = params['id'];
-      this.service.searchTerm = this.id;
-      this.device$ = this.service.device$;
+      this.id = +params['id'];
+      const device = this.service.devices.filter((device) => device.id === this.id);
+      this.device = device[0];
     });
   }
 
   backToList() {
     this.router.navigate(['/devices/']);
   }
-
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
-
 }

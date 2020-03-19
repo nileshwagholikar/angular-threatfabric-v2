@@ -1,48 +1,43 @@
-import {Component, QueryList, ViewChildren, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Router } from '@angular/router';
 
 import { Device } from './../../app-interfaces/device';
 import { DataService } from './../../app-service/data.service';
-import { NgbdSortableHeader, SortEvent } from './../../app-directives/sortable.directive';
 
 @Component({
   selector: 'app-devices',
   templateUrl: './devices.component.html',
   styleUrls: ['./devices.component.scss']
 })
-export class DevicesComponent implements OnInit {
-  device$: Observable<Device[]>;
-  devices$: Observable<Device[]>;
-  total$: Observable<number>;
 
-  @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
-  
-  constructor(public service: DataService, private router: Router) {
-    this.device$ = service.device$;
-    this.devices$ = service.devices$;
-    this.total$ = service.total$;
-  }
+export class DevicesComponent implements OnInit, OnDestroy {
+  devices: Device[];
+  deviceService;
 
-  onSort({column, direction}: SortEvent) {
-    // resetting other headers
-    this.headers.forEach(header => {
-      if (header.sortable !== column) {
-        header.direction = '';
-      }
-    });
-
-    this.service.sortColumn = column;
-    this.service.sortDirection = direction;
-  }
+  constructor(public service: DataService, private router: Router) {}
 
   selectDevice(id) {
     this.router.navigate(['/devices/details/', id]);
   }
 
   ngOnInit() {
-    this.service.searchTerm = '';
+    // $("#example").DataTables();
+    if(this.service.devices.length) {
+      this.devices = this.service.devices;
+    } else {
+    this.deviceService = this.service.getDevices()
+      .subscribe((data: Device[]) => {
+        this.devices = data;
+        this.service.devices = data;
+      });
+    }
+
   }
 
+  ngOnDestroy(): void {
+    if(this.deviceService) {
+      this.deviceService.unsubscribe();
+    }
+  }
 }

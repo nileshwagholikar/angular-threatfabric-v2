@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { DecimalPipe } from '@angular/common';
 
+import { DataService } from './app-service/data.service';
+
+import { DataTablesModule } from 'angular-datatables';
 
 // High charts
 import { ChartModule } from 'angular-highcharts';
@@ -40,13 +41,13 @@ import { AppDetailsComponent } from './app-pages/app-details/app-details.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
+    DataTablesModule,
     HttpClientModule,
     FormsModule,
-    NgbModule,  // add ngBootstrap modules to application
     FontAwesomeModule, // add Fontawesome icons to application
     ChartModule // add Chart modules to application
   ],
-  providers: [DecimalPipe],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

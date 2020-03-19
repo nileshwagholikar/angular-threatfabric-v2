@@ -32,7 +32,10 @@ h1 {
   display: flex;
   justify-content: center;
 }
-label {
+.float-label {
+  position: relative;
+}
+.float-label label {
   position: absolute;
   z-index: 10;
   top: 10px;
@@ -42,9 +45,6 @@ label {
   transition: all 0.2s;
   display: inline-block !important;
   text-align: left;
-}
-.float-label {
-  position: relative;
 }
 .float-label input,
 .float-label textarea {
