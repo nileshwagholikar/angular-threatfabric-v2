@@ -1,7 +1,7 @@
-import { Injectable, PipeTransform } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import {Device} from './../app-interfaces/device';
+import { Device } from './../app-interfaces/device';
 
 @Injectable({
   providedIn: 'root'
@@ -9,28 +9,28 @@ import {Device} from './../app-interfaces/device';
 
 export class DataService {
   // private _devices: Observable<Device[]>;
-  private _dailyInfectedURL = 'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/usdeur.json';
-  private _devicesURL = 'assets/devices.json';
-  private _rootedURL = 'assets/rooted.json';
-  private _infectedURL = 'assets/infected.json';
-  public devices = [];
-  private _device;
+  private dailyInfectedURL = 'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/usdeur.json';
+  private devicesURL = 'assets/devices.json';
+  private rootedURL = 'assets/rooted.json';
+  private infectedURL = 'assets/infected.json';
+  public devices: Device[] = [];
+  private device: Device;
 
   constructor(private http: HttpClient) { }
 
   public getDevices() {
-    return this.http.get(this._devicesURL);
+    return this.http.get(this.devicesURL);
   }
 
   public getDailyInfectedChartJSON() {
-    return this.http.get(this._dailyInfectedURL);
+    return this.http.get(this.dailyInfectedURL);
   }
 
   public getInfectedChartJSON() {
-    return this.http.get(this._infectedURL);
+    return this.http.get(this.infectedURL);
   }
 
   public getRootedChartJSON() {
-    return this.http.get(this._rootedURL);
+    return this.http.get(this.rootedURL);
   }
 }

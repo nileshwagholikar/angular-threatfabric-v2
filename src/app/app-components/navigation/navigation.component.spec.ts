@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NavigationComponent } from './navigation.component';
+
+// Icons font
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('NavigationComponent', () => {
   let component: NavigationComponent;
@@ -8,6 +10,7 @@ describe('NavigationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ FontAwesomeModule ],
       declarations: [ NavigationComponent ]
     })
     .compileComponents();

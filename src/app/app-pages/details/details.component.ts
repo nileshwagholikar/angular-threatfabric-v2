@@ -12,13 +12,15 @@ import { Device } from 'src/app/app-interfaces/device';
 export class DetailsComponent implements OnInit {
   id: number;
   private sub: any;
-  device;
+  device: Device;
 
   constructor(private router: Router, public service: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'];
+      /* tslint:disable:no-string-literal */
+      this.id = parseInt(params['id'], 10);
+      /* tslint:enable:no-string-literal */
       const selectedDevice = this.service.devices.filter((device) => device.id === this.id);
       this.device = selectedDevice[0];
     });
