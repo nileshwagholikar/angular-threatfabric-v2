@@ -9,7 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { DataService } from './../../app-service/data.service';
 
-class router {
+class Router {
   navigateByUrl(url: string) {
     return url;
   }
@@ -18,13 +18,13 @@ class router {
 describe('DetailsComponent', () => {
   let component: DetailsComponent;
   let fixture: ComponentFixture<DetailsComponent>;
-  let mockRouter = {
+  const mockRouter = {
     navigate: jasmine.createSpy('navigate')
   };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [ {provide: Router, useClass: router, useValue: mockRouter}, DataService ],
+      providers: [ {provide: Router, useClass: Router, useValue: mockRouter}, DataService ],
       imports: [ RouterTestingModule, HttpClientModule ],
       declarations: [ DetailsComponent ],
       schemas: [NO_ERRORS_SCHEMA]

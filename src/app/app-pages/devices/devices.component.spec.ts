@@ -7,7 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { HttpClientModule } from '@angular/common/http';
 
-class router {
+class Router {
   navigateByUrl(url: string) {
     return url;
   }
@@ -19,7 +19,7 @@ describe('DevicesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [ {provide: Router, useClass: router} ],
+      providers: [ {provide: Router, useClass: Router} ],
       imports: [ RouterTestingModule, HttpClientModule ],
       declarations: [ DevicesComponent ]
     })
